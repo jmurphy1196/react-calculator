@@ -82,6 +82,7 @@ const Calculator: React.FC<CalculatorProps> = ({ theme, setTheme }) => {
         if (btn.type === "digit") {
           return (
             <CalculatorBtn
+              key={ind}
               type='digit'
               value={btn.val}
               order={ind + 1}
@@ -107,6 +108,7 @@ const Calculator: React.FC<CalculatorProps> = ({ theme, setTheme }) => {
         } else if (btn.type === "operation") {
           return (
             <CalculatorBtn
+              key={ind}
               type={btn.type}
               value={btn.val}
               order={ind + 1}
@@ -156,6 +158,7 @@ const Calculator: React.FC<CalculatorProps> = ({ theme, setTheme }) => {
           }
           return (
             <CalculatorBtn
+              key={ind}
               type={btn.type}
               value={btn.val}
               order={ind + 1}
