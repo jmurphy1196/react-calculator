@@ -2,3 +2,39 @@ $theme-1-primary-primary: #21094e;
 $theme-1-primary-secondary: #511281;
 $theme-1-secondary-primary: #4ca1a3;
 $theme-1-secondary-secondary: #a5e1ad;
+
+$themes: (
+  1: (
+    digit-text-color: #21094e,
+    digit-background-color: white,
+    operation-text-color: #21094e,
+    operation-background-color: #a5e1ad,
+    action-text-color: white,
+    action-background-color: #511281,
+    theme-border-color: #a5e1ad,
+    theme-text-color: white,
+    background-color: #21094e,
+  ),
+  2: (
+    digit-text-color: white,
+    digit-background-color: #505050,
+    operation-text-color: white,
+    operation-background-color: #ff9500,
+    action-text-color: #505050,
+    action-background-color: #d4d4d2,
+    theme-border-color: #ff9500,
+    theme-text-color: white,
+    background-color: black,
+  ),
+  3: (
+    digit-text-color: #ff75a0,
+    digit-background-color: #eaffd0,
+    operation-text-color: white,
+    operation-background-color: #95e1d3,
+    action-text-color: white,
+    action-background-color: #fce38a,
+    theme-border-color: #fce38a,
+    theme-text-color: white,
+    background-color: #ff75a0,
+  ),
+);

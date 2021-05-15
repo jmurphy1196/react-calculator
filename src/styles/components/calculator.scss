@@ -1,27 +1,74 @@
 .calculator {
   display: grid;
+  margin-top: 5rem;
   width: 50rem;
-  height: 60rem;
+  height: 65rem;
   font-family: "Arial";
-
+  font-weight: bold;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 75px repeat(4, 1fr) 75px;
+  grid-template-rows: 50px 70px repeat(4, 1fr) 75px;
   padding: 2rem;
-  background-color: $theme-1-primary-primary;
-
-  grid-template: &--1 {
-    color: $theme-1-primary-primary;
-    background-color: $theme-1-primary-secondary;
+  padding-top: 4rem;
+  @include themify($themes) {
+    background-color: themed("background-color");
   }
 
   grid-gap: 20px;
+
+  &__header {
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    grid-column: 1/3;
+  }
+  &__theme-selector {
+    display: flex;
+    flex-wrap: wrap;
+    @include themify($themes) {
+      border: 3px solid themed("theme-border-color");
+      color: themed("theme-text-color");
+    }
+
+    position: relative;
+    h1 {
+      text-align: center;
+      display: inline-block;
+      position: absolute;
+      top: 0%;
+      transform: translateY(-60%);
+      @include themify($themes) {
+        background-color: themed("background-color");
+      }
+    }
+    align-items: center;
+    justify-content: center;
+    grid-column: 3/5;
+    input {
+      margin-top: 2px;
+      &:not(:nth-child(2)) {
+        margin-left: 10px;
+      }
+    }
+  }
 
   &__input {
     grid-column: 1 / 5;
     background-color: white;
     display: flex;
-    align-items: center;
     font-size: 20px;
+    position: relative;
+    justify-content: space-between;
+    padding: 5px;
+    span {
+      transform: translateY(calc(50% - 1rem));
+    }
+    &__ans {
+      color: grey;
+      position: absolute;
+      width: 90%;
+      text-align: end;
+    }
   }
 
   &__btn {
@@ -31,24 +78,31 @@
     justify-content: center;
     border-radius: 50%;
     font-size: 2rem;
-    color: $theme-1-primary-primary;
     &:hover {
       cursor: pointer;
     }
     &--digit {
-      background-color: white;
+      @include themify($themes) {
+        background-color: themed("digit-background-color");
+        color: themed("digit-text-color");
+      }
     }
     &--action {
-      background-color: $theme-1-primary-secondary;
+      @include themify($themes) {
+        background-color: themed("action-background-color");
+        color: themed("action-text-color");
+      }
       grid-column: 1 / 3;
       border-radius: 0% !important;
-      color: white !important;
       &:last-child {
         grid-column: 3 / 5;
       }
     }
     &--operation {
-      background-color: $theme-1-secondary-secondary;
+      @include themify($themes) {
+        background-color: themed("operation-background-color");
+        color: themed("operation-text-color");
+      }
     }
   }
 }
