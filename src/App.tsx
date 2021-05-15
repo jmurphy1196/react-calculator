@@ -7,7 +7,6 @@ export type Theme = "1" | "2" | "3";
 
 function App() {
   const [theme, setTheme] = useState<Theme>("1");
-  console.log("hello");
   return (
     <div className={`App theme-${theme}`}>
       <Calculator theme={theme} setTheme={setTheme} />

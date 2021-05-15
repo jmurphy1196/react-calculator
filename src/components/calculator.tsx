@@ -53,7 +53,7 @@ const Calculator: React.FC<CalculatorProps> = ({ theme, setTheme }) => {
           id='rad-1'
           name='theme'
           checked={theme === "1"}
-          onClick={handleThemeChange}
+          onChange={handleThemeChange}
         />
         <input
           type='radio'
@@ -61,7 +61,7 @@ const Calculator: React.FC<CalculatorProps> = ({ theme, setTheme }) => {
           id='rad-2'
           name='theme'
           checked={theme === "2"}
-          onClick={handleThemeChange}
+          onChange={handleThemeChange}
         />
         <input
           type='radio'
@@ -69,7 +69,7 @@ const Calculator: React.FC<CalculatorProps> = ({ theme, setTheme }) => {
           id='rad-3'
           name='theme'
           checked={theme === "3"}
-          onClick={handleThemeChange}
+          onChange={handleThemeChange}
         />
       </div>
       <div className='calculator__input'>
