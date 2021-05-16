@@ -113,7 +113,11 @@ const Calculator: React.FC<CalculatorProps> = ({ theme, setTheme }) => {
               value={btn.val}
               order={ind + 1}
               onClick={() => {
-                if (!operatorSelected && btn.val !== "DEL") {
+                if (
+                  !operatorSelected &&
+                  btn.val !== "DEL" &&
+                  input.length >= 1
+                ) {
                   setInput(`${input} ${btn.val} `);
                   setOperatorSelected(true);
                   setDecimalUsed(false);
@@ -144,7 +148,11 @@ const Calculator: React.FC<CalculatorProps> = ({ theme, setTheme }) => {
             handleClick = () => {
               setLastAnswer(input);
               setInput(`${solveExpression(input)}`);
-              setDecimalUsed(false);
+              if (!decimalUsed && `${solveExpression(input)}`.includes(".")) {
+                setDecimalUsed(true);
+              } else {
+                setDecimalUsed(false);
+              }
               setOperatorSelected(false);
             };
           } else {

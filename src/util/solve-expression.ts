@@ -24,6 +24,7 @@ export const solveExpression = (input: string): number => {
       ans = +expression[0];
       return expression[0];
     }
+    console.log(expression);
     let partialExpression = null;
     let currentPrio: number | null = null;
     let operatorInd: number | null = null;
